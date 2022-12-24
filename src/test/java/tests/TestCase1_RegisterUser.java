@@ -8,7 +8,7 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 import utilities.TestBase;
 
-public class TestCase1_RegisterUser extends TestBase {
+public class TestCase1_RegisterUser extends TestBase { git
 
 
         // 1. Launch browser
