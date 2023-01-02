@@ -1,5 +1,6 @@
 package tests;
 
+import com.github.javafaker.Faker;
 import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.By;
@@ -50,8 +51,11 @@ public class TestCase1_RegisterUser extends TestBase {
         Assert.assertTrue(newUserSignUpIsVisible);
 
         // 6. Enter name and email address
+        Faker faker = new Faker();
+        String fakerEmail = faker.internet().emailAddress();
+
         driver.findElement(By.name("name")).sendKeys("Mary");
-        driver.findElement(By.xpath("//*[@data-qa='signup-email']")).sendKeys("mys@gmail.com");
+        driver.findElement(By.xpath("//*[@data-qa='signup-email']")).sendKeys(fakerEmail);
 
         // 7. Click 'Signup' button
         driver.findElement(By.xpath("//*[@data-qa='signup-button']")).click();
@@ -111,10 +115,13 @@ public class TestCase1_RegisterUser extends TestBase {
         // 15. Click 'Continue' button
         driver.findElement(By.linkText("Continue")).click();
 
-        //driver.switchTo().frame("ad_iframe");
-        //driver.findElement(By.id("dismiss-button")).click();
+        //AD CLOSE
+        driver.navigate().refresh();
+        Thread.sleep(5000);
+        driver.findElement(By.linkText("Continue")).click();
 
         // 16. Verify that 'Logged in as username' is visible
+        Thread.sleep(3000);
         boolean loggedInAsUsernameIsDisplayed = driver.findElement(By.partialLinkText("Logged in as")).isDisplayed();
         Assert.assertTrue(loggedInAsUsernameIsDisplayed);
 
