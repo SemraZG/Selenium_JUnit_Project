@@ -30,7 +30,7 @@ public class TestCase7_VerifyTestCasesPage extends TestBase {
 
         // 4. Click on 'Test Cases' button
         driver.findElement(By.xpath("//a[@href = '/test_cases']")).click();
-        Thread.sleep(3000);
+
         // 5. Verify user is navigated to test cases page successfully
         assertTrue(driver.findElement(By.partialLinkText("Test Case")).isEnabled());
 

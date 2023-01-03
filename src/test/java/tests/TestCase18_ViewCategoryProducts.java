@@ -39,7 +39,7 @@ public class TestCase18_ViewCategoryProducts extends  TestBase  {
         //driver.findElement(By.xpath("//a[@href='/category_products/2']")).click();
         String actualText1 = driver.findElement(By.xpath("//h2[@class='title text-center']")).getText();
         assertEquals("WOMEN - TOPS PRODUCTS",actualText1);
-
+        Thread.sleep(3000);
 
         //7. On left side bar, click on any sub-category link of 'Men' category
         driver.findElement(By.xpath("//a[@href='#Men']")).click();
