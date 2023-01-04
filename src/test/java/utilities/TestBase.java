@@ -1,5 +1,6 @@
 package utilities;
 
+import dev.failsafe.internal.util.Durations;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.apache.commons.io.FileUtils;
 import org.junit.After;
