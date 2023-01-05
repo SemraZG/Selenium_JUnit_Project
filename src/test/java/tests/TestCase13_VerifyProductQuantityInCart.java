@@ -31,7 +31,7 @@ public class TestCase13_VerifyProductQuantityInCart extends TestBase {
         // 4. Click 'View Product' for any product on home page---->(1.ürünü seçtim)
          driver.findElement(By.xpath("(//a[@style='color: brown;'])[1]")).click();
 
-            Thread.sleep(3000);
+            Thread.sleep(7000);
             driver.navigate().refresh();
             driver.findElement(By.xpath("(//a[@style='color: brown;'])[1]")).click();
 
